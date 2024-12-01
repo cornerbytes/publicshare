@@ -1,5 +1,5 @@
     CREATE DATABASE itb;
-    USE ITB;
+    USE itb;
     CREATE TABLE account (
         AccountID INT(11) NOT NULL AUTO_INCREMENT,
         Name VARCHAR(100) NOT NULL,
@@ -38,7 +38,7 @@
         category VARCHAR(50) NOT NULL,
         description TEXT,
         attachments VARCHAR(255),
-        tkt_no VARCHAR(8),
+        tkt_no VARCHAR(100),
         isActive TINYINT(1) DEFAULT 1,
         resolved_by VARCHAR(100),
         PRIMARY KEY (tkt_no)
