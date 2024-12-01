@@ -1,4 +1,4 @@
-    CREATE DATABASE ITB;
+    CREATE DATABASE itb;
     USE ITB;
     CREATE TABLE account (
         AccountID INT(11) NOT NULL AUTO_INCREMENT,
