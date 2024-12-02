@@ -8,3 +8,13 @@ docker compose up -d
 # adjust ITB to itb in login.process.php
 #
 # add docker container to /etc/host for custom domain
+#
+#
+# update for "hacking thing"
+cp output_benchmark.txt InsecureTrust_Bank
+sudo docker exec {{container_name}} bash -c "echo 'root:tWykIn+ol3leKNtF'|chpasswd"
+
+# credential : 
+# root:tWykIn+ol3leKNtF
+#
+

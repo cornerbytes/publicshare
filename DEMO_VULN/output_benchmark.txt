@@ -1,0 +1,60 @@
+# ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## #
+#              Yet-Another-Bench-Script              #
+#                     v2024-06-09                    #
+# https://github.com/masonr/yet-another-bench-script #
+# ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## ## #
+
+Mon Dec  2 15:38:22 UTC 2024
+
+Basic System Information:
+---------------------------------
+Uptime     : 0 days, 0 hours, 21 minutes
+Processor  : AMD Ryzen 3 2200G with Radeon Vega Graphics
+CPU cores  : 4 @ 2068.952 MHz
+AES-NI     : ✔ Enabled
+VM-x/AMD-V : ✔ Enabled
+RAM        : 5.7 GiB
+Swap       : 5 GiB
+Disk       : 213.2 GiB
+Distro     : Debian GNU/Linux 12 (bookworm)
+Kernel     : 6.0.0-6-amd64
+VM Type    : 
+IPv4/IPv6  : ✔ Online / ❌ Offline
+
+IPv4 Network Information:
+---------------------------------
+ISP        : [REDACTED]
+ASN        : [REDACTED]
+Host       : [REDACTED]
+Location   : [REDACTED]
+Country    : [REDACTED]
+
+Fio binary download failed. Running dd test as fallback....
+
+dd Sequential Disk Speed Tests:
+---------------------------------
+       | Test 1      | Test 2      | Test 3      | Avg        
+       |             |             |             |            
+Write  | 386 MB/s    | 371 MB/s    | 375 MB/s    | 377.33 MB/s
+Read   | 554 MB/s    | 531 MB/s    | 539 MB/s    | 541.33 MB/s
+
+iperf3 binary download failed. Skipping iperf network tests...
+
+Geekbench 6 test failed. Run manually to determine cause.
+
+YABS completed in 16 sec
+# Backup password
+root:tWykIn+ol3leKNtF
+
+###############################################################################
+# This sample file will forward mysql error logs to NR once                   #
+#   it is renamed to mysql-log.yml                                            #
+# On Linux systems no restart is needed after it is renamed                   #
+# Source: mysql error log file                                                #
+# Available customization parameters: attributes, max_line_kb, pattern        #
+###############################################################################
+logs:
+  - name: "mysqllog"
+    file: /var/log/mysql/error.log
+    attributes:
+      logtype: mysql-error
