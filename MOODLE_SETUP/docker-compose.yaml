@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  moodle:
+    image: moodlehq/moodle-php-apache:8.3-bullseye
+    container_name: moodle
+    depends_on:
+      - db
+    ports:
+      - "8080:80"
+    environment:
+      - MOODLE_DATABASE_TYPE=mysqli
+      - MOODLE_DATABASE_HOST=db
+      - MOODLE_DATABASE_NAME=moodle
+      - MOODLE_DATABASE_USER=moodle
+      - MOODLE_DATABASE_PASSWORD=moodle
+    volumes:
+      - ./moodle:/var/www/html
+      - ./mysql-socket:/var/run/mysqld
+
+  db:
+    image: mysql:8.4
+    container_name: moodle-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: moodle
+      MYSQL_USER: moodle
+      MYSQL_PASSWORD: moodle
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - mysqldata:/var/lib/mysql
+      - ./mysql-socket:/var/run/mysqld
+
+volumes:
+  mysqldata:
+
